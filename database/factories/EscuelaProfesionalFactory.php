@@ -14,6 +14,6 @@
 $factory->define(App\EscuelaProfesional::class, function (Faker\Generator $faker) {
     return [
         'nombre' => $faker->name,
-        'id_facultad' => 1,
+        'id_facultad' => '1',
     ];
 });
