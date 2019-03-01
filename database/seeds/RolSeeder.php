@@ -12,11 +12,11 @@ class RolSeeder extends Seeder
      */
     public function run()
     {
-        \factory(Rol::class)->times(1)->create([
+        Rol::create([
             'nombre' => 'Unayoe'
         ]); 
 
-        \factory(Rol::class)->times(1)->create([
+        Rol::create([
             'nombre' => 'Estudiante'
         ]); 
     }

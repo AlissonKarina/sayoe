@@ -13,7 +13,7 @@ class UsuarioSeeder extends Seeder
     public function run()
     {
         factory(Usuario::class)->times(1)->create([
-            'id_rol' => 1
+            'id_rol' => '1'
         ]);
 
         factory(Usuario::class)->times(10)->create();
