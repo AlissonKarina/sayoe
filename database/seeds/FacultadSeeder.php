@@ -12,7 +12,7 @@ class FacultadSeeder extends Seeder
      */
     public function run()
     {
-        factory(Facultad::class)->times(1)->create([
+        Facultad::create([
             'nombre' => 'INGENIERÍA DE SISTEMAS E INFORMATICA'
         ]);
     }
