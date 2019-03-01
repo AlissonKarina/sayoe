@@ -18,13 +18,13 @@ class CreateAlumnosTable extends Migration
             $table->string('codigo',8)->unique();
             $table->string('nombre',45);
             $table->string('apellido',45)->nullable();
-            $table->string('dni',8);
+            $table->string('dni',8)->unique();
             $table->tinyInteger('sexo');
             $table->date('fecha_nacimiento');
             $table->string('telefono',10)->nullable();
             $table->string('celular',10)->nullable();
             $table->string('direccion',80);
-            $table->string('correo_personal',60)->nullable();
+            $table->string('correo_personal',60)->unique()->nullable();
 
             $table->primary(['id', 'codigo']);
         
