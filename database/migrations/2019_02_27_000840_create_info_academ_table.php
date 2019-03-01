@@ -21,11 +21,9 @@ class CreateInfoAcademTable extends Migration
             $table->string('anho_ingreso', 4);
             $table->string('estado_permanencia')->nullable();
             $table->integer('total_creditos')->nullable();
-            
             $table->integer('id_alumno')->unsigned();
-            $table->string('codigo_alumno', 8);
-
             $table->foreign('id_alumno')->references('id')->on('alumnos');
+            $table->string('codigo_alumno', 8);
             $table->foreign('codigo_alumno')->references('codigo')->on('alumnos');
 
 
