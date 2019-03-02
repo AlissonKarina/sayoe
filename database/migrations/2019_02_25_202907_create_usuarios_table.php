@@ -20,8 +20,8 @@ class CreateUsuariosTable extends Migration
             $table->tinyInteger('estado')->nullable();
             $table->tinyInteger('autenticado')->nullable();
             $table->datetime('ultima_sesion');
-            $table->integer('id_rol')->unsigned()->nullable();
 
+            $table->integer('id_rol')->unsigned()->nullable();
             $table->foreign('id_rol')->references('id')->on('roles');
         });
     }

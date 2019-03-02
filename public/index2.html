@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>vue js demo</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
+    </head>
+    <body>
+        <div class="container">
+            <div id="app">
+                <label v-text="mensaje"></label>
+                <div class="b-project" v-for="project in projects">
+                    {{project.title}}                    
+                    {{project.description}}
+                    <hr>
+                </div>
+
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script>
+            //IIFE: Immediate Invoked Function Expression
+            (function(Vue, axios) {
+                var app = new Vue({
+                    el : '#app',
+                    data: {
+                        mensaje: 'holaa!!!',
+                        projects: [
+                            {
+                                title: 'Trabajando con Vue.js',
+                                description: 'Desc.'
+                            },
+                            {
+                                title: 'Trabajando con Vue.js #2',
+                                description: 'Desc. #2'
+                            },
+                        ]
+                    },
+                    mounted: function(  ){
+                        var serverURL = 'http://localhost:8000/usuarios';
+                        var _this = this;
+                        var configAxios = {
+                            url: serverURL,
+                            method: 'get',
+                            responseType: 'json',
+                            data: {},
+                            headers: {
+                            }
+                        };
+
+                        axios.request(configAxios).then(function (response){
+                            console.log(response);
+                        });
+                    },
+                });
+            })(window.Vue, window.axios);
+        </script>
+    </body>
+</html>

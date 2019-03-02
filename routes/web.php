@@ -10,6 +10,8 @@
 | and give it the Closure to call when that URI is requested.
 |
 */
+
+
 $router->group(['prefix'=>'api/v1'], function() use($router){
     // FACULTADES
     $router->get('/facultades', 'FacultadController@index');
@@ -26,7 +28,6 @@ $router->group(['prefix'=>'api/v1'], function() use($router){
     $router->delete('/unayoe-perfil/{id}', 'UnayoePerfilController@destroy');
 });
 
-$router->post('/login', ['uses' => 'UserController@getToken']);
 
 $router->get('/', function () use ($router) {
     return $router->app->version();
@@ -35,6 +36,3 @@ $router->get('/', function () use ($router) {
 $router->get('/key', function (){
     return str_random(32);
 });
-
-Route::get('/users', ['uses' => 'UserController@index']);
-$router->post('/users', ['uses' => 'UserController@create']);

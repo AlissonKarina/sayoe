@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Hash;
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -14,7 +14,7 @@
 $factory->define(App\Usuario::class, function (Faker\Generator $faker) {
     return [
         'correo' => $faker->unique()->safeEmail,
-        'contrasenha' => $faker->name,
+        'contrasenha' =>  Hash::make('estudiante'),
         'estado' => 1,
         'autenticado' => 1,
         'ultima_sesion' => '2012-02-03',
